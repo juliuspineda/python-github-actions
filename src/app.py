@@ -4,13 +4,21 @@ import requests
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "oCzbrNGIbHnoGwLhXCuJVkkUsaMr9QoA"
-from flask import Flask
 
-app = Flask(__name__)
+def install_and_import(package):
+    import importlib
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        import pip
+        pip.main(['install', package])
+    finally:
+        globals()[package] = importlib.import_module(package)
 
-@app.route("/")
-def index():
-    while True:
+
+install_and_import('transliterate')
+
+while True:
     orig = input("Starting Location: ")
     if orig == "quit" or orig == "q":
         break
@@ -76,9 +84,3 @@ def index():
             print("************************************************************************\n")
     else:
         print("invalid value!")
-
-
-if __name__ == "__main__":
-    app.run()
-
-
