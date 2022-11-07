@@ -4,8 +4,13 @@ import requests
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "oCzbrNGIbHnoGwLhXCuJVkkUsaMr9QoA"
+from flask import Flask
 
-while True:
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    while True:
     orig = input("Starting Location: ")
     if orig == "quit" or orig == "q":
         break
@@ -71,3 +76,9 @@ while True:
             print("************************************************************************\n")
     else:
         print("invalid value!")
+
+
+if __name__ == "__main__":
+    app.run()
+
+
