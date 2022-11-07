@@ -44,4 +44,5 @@ jobs:
       if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
         git remote add heroku https://heroku:1afe91b0-d82d-414e-b81c-7a605ff799f6@git.heroku.com/evening-ridge-74162.git
-        git push heroku HEAD:master -f
+        git checkout -b masterbranch
+        git push heroku masterbranch
