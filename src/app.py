@@ -5,15 +5,15 @@ import requests
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "oCzbrNGIbHnoGwLhXCuJVkkUsaMr9QoA"
 
-def install_and_import(package):
-    import importlib
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['install', package])
-    finally:
-        globals()[package] = importlib.import_module(package)
+import subprocess
+import sys
+
+try:
+    import requests as pd
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'requests'])
+finally:
+    import requests as pd
 
 
 install_and_import('transliterate')
