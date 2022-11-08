@@ -1,6 +1,6 @@
 from secrets import choice
 import urllib.parse
-from flask import requests
+import requests
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "oCzbrNGIbHnoGwLhXCuJVkkUsaMr9QoA"
