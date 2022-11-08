@@ -13,6 +13,9 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", 'requests'])
 finally:
     import requests as pd
+    
+
+install_and_import('requests')
 
 while True:
     orig = input("Starting Location: ")
