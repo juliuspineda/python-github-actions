@@ -1,6 +1,5 @@
 from secrets import choice
 import urllib.parse
-import requests
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "oCzbrNGIbHnoGwLhXCuJVkkUsaMr9QoA"
