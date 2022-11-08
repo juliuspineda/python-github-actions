@@ -14,9 +14,6 @@ except ImportError:
 finally:
     import requests as pd
 
-
-install_and_import('transliterate')
-
 while True:
     orig = input("Starting Location: ")
     if orig == "quit" or orig == "q":
