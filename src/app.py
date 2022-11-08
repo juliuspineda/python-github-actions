@@ -6,16 +6,9 @@ key = "oCzbrNGIbHnoGwLhXCuJVkkUsaMr9QoA"
 
 import subprocess
 import sys
+import os 
 
-try:
-    import requests as pd
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", 'requests'])
-finally:
-    import requests as pd
-    
-
-install_and_import('requests')
+os.system('pip install requests')
 
 while True:
     orig = input("Starting Location: ")
