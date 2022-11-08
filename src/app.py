@@ -1,15 +1,25 @@
 from secrets import choice
 import urllib.parse
-import requests
+#import requests
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "oCzbrNGIbHnoGwLhXCuJVkkUsaMr9QoA"
 
+import pkg_resources
 import subprocess
 import sys
-import os 
+import os
 
-os.system('pip3 install requests')
+REQUIRED = {'requests'}
+
+installed = {pkg.key for pkg in pkg_resources.working_set}
+missing = REQUIRED - installed
+
+if missing:
+    python = sys.executable
+    subprocess.check_call([python, '-m', 'pip', 'install', *missing], stdout=subprocess.DEVNULL)
+
+#os.system('pip3 install requests')
 
 while True:
     orig = input("Starting Location: ")
