@@ -8,7 +8,7 @@ import subprocess
 import sys
 import os 
 
-os.system('pip install requests')
+os.system('pip3 install requests')
 
 while True:
     orig = input("Starting Location: ")
