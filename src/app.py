@@ -19,7 +19,6 @@ if missing:
     python = sys.executable
     subprocess.check_call([python, '-m', 'pip', 'install', *missing], stdout=subprocess.DEVNULL)
 
-#os.system('pip3 install requests')
 
 while True:
     orig = input("Starting Location: ")
